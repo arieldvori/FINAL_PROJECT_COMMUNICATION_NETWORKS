@@ -2,11 +2,12 @@ import socket
 
 # Define IP address and port to listen on
 ip_address = '127.0.0.1'
-port = 54
+port = 53 # DNS uses port 53
+ 
 
-# Create UDP socket and bind to IP address and port
+# Create UDP socket and bind to IP address and port number.
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.bind((ip_address, port))
+sock.bind((ip_address, port)) 
 
 # Define a dictionary of DNS records
 dns_records = {
@@ -19,9 +20,10 @@ dns_records = {
 while True:
     print("Waiting for Client request...")
     # Receive DNS request and address from client
-    data, address = sock.recvfrom(1024)
+    data, address = sock.recvfrom(512)
     if data:
         print("Data has been received.")
+    # Decode DNS request from bytes to string format.
     query = data.decode()
 
     # Extract domain name from DNS request

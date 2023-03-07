@@ -1,7 +1,7 @@
 def dns_client():
     # Define DNS server IP address and port
     server_ip = '127.0.0.1'
-    server_port = 54
+    server_port = 53
 
     # Define domain name to query
     domain_name = 'example.com'
@@ -125,13 +125,3 @@ def http_app_tcp():
         print(response.decode())
 
 
-#def http_app_Reliable_UDP():
-
-
-
-if __name__ == '__main__':
-    # dhcp_client = DHCP_client()
-    # dhcp_client.client()
-    # dns_client()
-    # http_app_tcp()
-    http_app_Reliable_UDP()
